@@ -37,7 +37,12 @@ const Navbar = () => {
           <NavLink href="#benefits">Benefits</NavLink>
           <NavLink href="#plans">Plans</NavLink>
           <NavLink href="#testimonials">Testimonials</NavLink>
-          <NavLink href="#faq">FAQ</NavLink>
+          <Link 
+            to="/faq"
+            className="text-foreground text-sm font-medium transition-colors hover:text-orange-500"
+          >
+            FAQ
+          </Link>
           <Link 
             to="#quote" 
             className="bg-orange-500 text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:bg-orange-600 hover:shadow-md"
@@ -68,9 +73,13 @@ const Navbar = () => {
             <MobileNavLink href="#testimonials" onClick={() => setIsMenuOpen(false)}>
               Testimonials
             </MobileNavLink>
-            <MobileNavLink href="#faq" onClick={() => setIsMenuOpen(false)}>
+            <Link 
+              to="/faq"
+              className="block py-3 text-center text-foreground font-medium border-b border-border"
+              onClick={() => setIsMenuOpen(false)}
+            >
               FAQ
-            </MobileNavLink>
+            </Link>
             <Link 
               to="#quote" 
               className="bg-orange-500 text-white px-6 py-3 rounded-full font-medium text-center"
