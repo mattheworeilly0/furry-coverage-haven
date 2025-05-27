@@ -1,10 +1,11 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import BenefitsSection from '@/components/BenefitsSection';
 import PricingSection from '@/components/PricingSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
-import QuoteForm from '@/components/QuoteForm';
+import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -48,7 +49,7 @@ const Index = () => {
           <BenefitsSection />
           <PricingSection />
           <TestimonialsSection />
-          <QuoteForm />
+          <CTASection />
         </main>
         <Footer />
         

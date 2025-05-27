@@ -43,12 +43,12 @@ const Navbar = () => {
           >
             FAQ
           </Link>
-          <Link 
-            to="#quote" 
+          <a 
+            href="#cta" 
             className="bg-orange-500 text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:bg-orange-600 hover:shadow-md"
           >
-            Get a Quote
-          </Link>
+            Get Started
+          </a>
         </div>
 
         {/* Mobile Navigation Toggle */}
@@ -80,13 +80,13 @@ const Navbar = () => {
             >
               FAQ
             </Link>
-            <Link 
-              to="#quote" 
+            <a 
+              href="#cta" 
               className="bg-orange-500 text-white px-6 py-3 rounded-full font-medium text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              Get a Quote
-            </Link>
+              Get Started
+            </a>
           </div>
         </div>
       )}
