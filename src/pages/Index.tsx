@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -8,6 +7,9 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
+import TrustBar from '@/components/TrustBar';
+import StatsBand from '@/components/StatsBand';
+import HowItWorks from '@/components/HowItWorks';
 
 const Index = () => {
   // Animate elements when they come into view
@@ -16,7 +18,7 @@ const Index = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+            (entry.target as HTMLElement).classList.add('active');
           }
         });
       },
@@ -34,6 +36,44 @@ const Index = () => {
     };
   }, []);
 
+  // SEO: title, meta description, canonical, and structured data
+  useEffect(() => {
+    document.title = 'Pet Insurance - Affordable Coverage for Your Pets';
+
+    const metaDesc =
+      'Comprehensive pet insurance that gives you peace of mind with 90% coverage and 24/7 vet support.';
+    let descTag = document.querySelector('meta[name="description"]');
+    if (!descTag) {
+      descTag = document.createElement('meta');
+      descTag.setAttribute('name', 'description');
+      document.head.appendChild(descTag);
+    }
+    descTag.setAttribute('content', metaDesc);
+
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', window.location.origin + '/');
+
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Pet Insurance',
+      url: window.location.origin + '/',
+    };
+    let ldScript = document.getElementById('ld-org') as HTMLScriptElement | null;
+    if (!ldScript) {
+      ldScript = document.createElement('script');
+      ldScript.type = 'application/ld+json';
+      ldScript.id = 'ld-org';
+      document.head.appendChild(ldScript);
+    }
+    ldScript.textContent = JSON.stringify(ld);
+  }, []);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -46,6 +86,9 @@ const Index = () => {
         <Navbar />
         <main>
           <HeroSection />
+          <TrustBar />
+          <StatsBand />
+          <HowItWorks />
           <BenefitsSection />
           <PricingSection />
           <TestimonialsSection />
