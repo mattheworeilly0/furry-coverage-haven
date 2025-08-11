@@ -165,7 +165,7 @@ const PricingSection = () => {
                 <div className="flex flex-col gap-3">
                   <button 
                     onClick={async () => {
-                      const { supabase } = await import("@/lib/supabaseClient");
+      const { supabase } = await import("@/integrations/supabase/client");
                       const { toast } = await import("@/hooks/use-toast");
                       try {
                         if (!supabase) {
@@ -190,7 +190,7 @@ const PricingSection = () => {
 
                   <button 
                     onClick={async () => {
-                      const { supabase } = await import("@/lib/supabaseClient");
+                      const { supabase } = await import("@/integrations/supabase/client");
                       const { toast } = await import("@/hooks/use-toast");
                       try {
                         if (!supabase) {

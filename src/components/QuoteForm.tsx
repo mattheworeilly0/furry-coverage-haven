@@ -32,7 +32,7 @@ const QuoteForm = () => {
       return;
     }
     try {
-      const { supabase } = await import("@/lib/supabaseClient");
+      const { supabase } = await import("@/integrations/supabase/client");
       if (!supabase) throw new Error("Supabase not configured");
       const { error } = await supabase.functions.invoke("save-customer", {
         body: { ownerName, email, phone, petType, breed, age, zipCode }
