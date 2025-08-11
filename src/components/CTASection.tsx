@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 const CTASection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -46,10 +47,10 @@ const CTASection = () => {
             ease: [0.25, 0.1, 0.25, 1]
           }
         }} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="btn-primary text-lg px-8 py-4 flex items-center gap-2 group">
+            <Link to="/quote" className="btn-primary text-lg px-8 py-4 flex items-center gap-2 group">
               Get Started Today
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </button>
+            </Link>
             
           </motion.div>
         </motion.div>

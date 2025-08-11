@@ -34,7 +34,7 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="#quote" className="btn-primary flex items-center justify-center gap-2">
+              <Link to="/quote" className="btn-primary flex items-center justify-center gap-2">
                 Get a Quote
                 <motion.div animate={{
                 y: [0, 5, 0]
